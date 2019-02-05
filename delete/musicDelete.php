@@ -30,7 +30,7 @@ $temp = $cars[0];
 $sql = "DELETE FROM songs WHERE Name='$data[0]'";
 //$sql = "DELETE FROM songs WHERE Name=";
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "The record was deleted";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
