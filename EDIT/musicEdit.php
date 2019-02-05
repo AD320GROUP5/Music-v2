@@ -67,14 +67,20 @@ if ($conn->connect_error) {
 }
 $temp = $cars[0];
 
+/*
+$sql = "INSERT INTO songs (Name, Artist, Year, Cover)
+VALUES ('$data[0]', '$data[1]', '$data[2]', '$data[3]')";
+*/
 
-$sql = "DELETE FROM songs WHERE Name='$data[0]'";
-//$sql = "DELETE FROM songs WHERE Name=";
+$sql = "UPDATE songs SET Artist='$data[1]' WHERE Name='$data[0]'";
+
+
 if ($conn->query($sql) === TRUE) {
-    echo "The Record Was Deleted Successfully";
+    echo "                   New record was updated successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
 
 echo "</table>";
 echo "</font>"; 
